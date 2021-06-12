@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app>
+   <security-role>
+      <description></description>
+      <role-name>admin</role-name>
+   </security-role>
+   <security-constraint>
+      <display-name>Happy_Puppy security</display-name>
+      <web-resource-collection>
+         <web-resource-name>Happy_Puppy</web-resource-name>
+         <description>관리자 페이지</description>
+         <url-pattern>/Main_admin.jsp</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <description>권한 관리자명</description>
+         <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/Login.jsp</form-login-page>
+         <form-error-page>/Login_failed.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+</web-app>
